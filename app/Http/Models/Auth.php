@@ -31,7 +31,7 @@ class Auth
 
         $user = $result->fetch();
 
-        if ($user && $password == $user['password'])
+        if ($user && password_verify($password, $user['password']))
         {
             return $user['ID'];
         }
