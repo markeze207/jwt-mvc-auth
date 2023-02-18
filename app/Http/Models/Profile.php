@@ -3,6 +3,7 @@
 namespace App\Http\Models;
 
 use App\Http\Core\configJWT;
+use App\Http\Core\Db;
 use Exception;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -32,5 +33,18 @@ class Profile
         } else {
             return false;
         }
+    }
+    public static function getName($userId) // Тестовый метод
+    {
+        $db = Db::getConnection();
+
+        $sql = 'SELECT * FROM users WHERE ID = ?';
+
+        $result = $db->prepare($sql);
+        $result->execute([$userId]);
+
+        $user = $result->fetch();
+
+        return $user['name'];
     }
 }

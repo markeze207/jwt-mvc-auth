@@ -15,7 +15,9 @@ class ProfileControllers
             Route::redirect('/auth');
         }
 
-        return View::view('profile.index');
+        $userName = Profile::getName($_COOKIE['userId']);
+
+        return View::view('profile.index', compact('userName'));
     }
 
     public function check()
