@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
+  "require": {
+    "ext-pdo": "*",
+    "firebase/php-jwt": "^6.4"
+  }
+}
