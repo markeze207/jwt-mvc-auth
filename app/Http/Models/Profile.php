@@ -2,7 +2,7 @@
 
 namespace App\Http\Models;
 
-use App\Http\Core\configJWT;
+use App\Http\Core\ConfigJWT;
 use App\Http\Core\Db;
 use Exception;
 use Firebase\JWT\JWT;
