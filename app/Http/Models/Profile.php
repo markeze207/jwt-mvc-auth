@@ -22,8 +22,8 @@ class Profile
             // Если декодирование выполнено успешно, показать данные пользователя
             try {
                 // Декодирование jwt
-                $config = new configJWT();
-                return JWT::decode($jwt, new Key('ffffff', 'HS256'));
+                $config = new ConfigJWT('ffffff', 'http://rmvc', 'http://rmvc', 12312312, 123123123);
+                return JWT::decode($jwt, new Key($config->key, 'HS256'));
             }
 
                 // Если декодирование не удалось, это означает, что JWT является недействительным

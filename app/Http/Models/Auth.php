@@ -39,8 +39,7 @@ class Auth
     }
     public static function auth($userId): string
     {
-        $config = new configJWT();
-        $config->setConfig('ffffff', 'http://rmvc', 'http://rmvc', 12312312, 123123123);
+        $config = new configJWT('ffffff', 'http://rmvc', 'http://rmvc', 12312312, 123123123);
         $token = array(
             "iss" => $config->iss,
             "aud" => $config->aud,

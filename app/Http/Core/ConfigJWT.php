@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 date_default_timezone_set("Europe/Moscow");
 
 
-class configJWT
+class ConfigJWT
 {
 
     public $key;
@@ -26,7 +26,7 @@ class configJWT
      * @param int $iat
      * @param int $nbf
      */
-    public function setConfig($key, $iss, $aud, $iat, $nbf)
+    public function __construct($key, $iss, $aud, $iat, $nbf)
     {
         $this->key = $key;
         $this->iss = $iss;
